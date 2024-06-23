@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="qtriptest.tests.testCase_03" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-06-23T09:13:44" hostname="DESKTOP-LEBQ3UK" time="168.43">
+  <properties/>
+  <testcase name="testcase03[0](TC3_1@gmaill.com, abc@123, Bengaluru, Niaboytown, palam, 16-11-2025, 2)" classname="qtriptest.tests.testCase_03" time="56.33"/>
+  <testcase name="testcase03[1](TC3_2@gmail.com, abc@123, Singapore, Grand Ashland, biden, 26-11-2025, 4)" classname="qtriptest.tests.testCase_03" time="55.952"/>
+  <testcase name="testcase03[2](TC3_3@gmail.com, abc@123, Bangkok, Tifwales Ferry, prabhu, 26-12-2025, 1)" classname="qtriptest.tests.testCase_03" time="56.148"/>
+  <system-out><![CDATA[Random Generated UUID : 23ef154e-e32a-453d-9fd3-b1923fa230cd_TC3_1@gmaill.com
+Reservation id:f66841511ddda77c
+Random Generated UUID : 3e3f7613-0130-4426-b239-27af0201924b_TC3_2@gmail.com
+Reservation id:349db2612a65c1f8
+Random Generated UUID : b7e6ffba-de38-4063-b83b-7aa203f8b549_TC3_3@gmail.com
+Reservation id:d43ead9ed0148b62
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

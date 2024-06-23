@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="qtriptest.tests.testCase_04" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-06-23T09:16:32" hostname="DESKTOP-LEBQ3UK" time="300.011">
+  <properties/>
+  <testcase name="testcase04[0](TC4_1@gmail.com, abc@123, Bengaluru;Niaboytown;Chicky;01-01-2025;2, Kolkata;Thton;Cha Cha;01-02-2025;3, Malaysia;Wootkentree;Bom Bom;02-12-2025;1)" classname="qtriptest.tests.testCase_04" time="98.647"/>
+  <testcase name="testcase04[1](TC4_2@gmail.com, abc@321, Bengaluru;Fort Sionnnn;Chicky;01-01-2025;2, Kolkata;North Gelgoon;Cha Cha;01-02-2025;3, Malaysia;Wootkentree;Lya;02-12-2025;1)" classname="qtriptest.tests.testCase_04" time="100.277"/>
+  <testcase name="testcase04[2](TC4_3@gmail.com, abc@321, Goa;Perthby;Chicky;01-01-2025;2, Bengaluru;Niaboytown;Chicky;01-01-2025;2, Bengaluru;Fort Sionnnn;Chicky;01-01-2025;2)" classname="qtriptest.tests.testCase_04" time="101.085"/>
+  <system-out><![CDATA[Random Generated UUID : b309b355-cc1c-4e68-a243-6d622187636e_TC4_1@gmail.com
+Reservation id:1bdc9fd0f8995e8e
+Random Generated UUID : 6aa7ca96-0942-4bb7-93d7-63183117d0ec_TC4_2@gmail.com
+Reservation id:2ebc931066be8c80
+Random Generated UUID : 8d4c89fc-80ab-46ff-95e1-ea6fb4162170_TC4_3@gmail.com
+Reservation id:fc173f3bfd53e6a3
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

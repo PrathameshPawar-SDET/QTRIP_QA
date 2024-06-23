@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="qtriptest.tests.testCase_01" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-06-23T09:11:08" hostname="DESKTOP-LEBQ3UK" time="70.262">
+  <properties/>
+  <testcase name="testcase01[0](testuser@gmail.com, abc@123)" classname="qtriptest.tests.testCase_01" time="25.102"/>
+  <testcase name="testcase01[1](TESTUSER@gmail.com, 123456.0)" classname="qtriptest.tests.testCase_01" time="22.621"/>
+  <testcase name="testcase01[2](123_USER_low@gmail.com, QWERTY!!!!)" classname="qtriptest.tests.testCase_01" time="22.531"/>
+  <system-out><![CDATA[Random Generated UUID : cb282d0c-3c60-46e4-ad42-641e600cc760_testuser@gmail.com
+Random Generated UUID : 158064e7-e892-48f4-a305-2db3bf78183e_TESTUSER@gmail.com
+Random Generated UUID : 61946331-3755-4de2-b2a7-2f1a53eb59b0_123_USER_low@gmail.com
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

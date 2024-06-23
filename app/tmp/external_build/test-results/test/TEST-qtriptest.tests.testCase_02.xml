@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="qtriptest.tests.testCase_02" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-06-23T09:12:19" hostname="DESKTOP-LEBQ3UK" time="85.052">
+  <properties/>
+  <testcase name="testcase02[0](Bengaluru, Cycling Routes, 6-12 Hours, 1, 9)" classname="qtriptest.tests.testCase_02" time="28.527"/>
+  <testcase name="testcase02[1](Singapore, Hillside Getaways, 6-12 Hours, 1, 8)" classname="qtriptest.tests.testCase_02" time="28.768"/>
+  <testcase name="testcase02[2](Goa, Party Spots, 2-6 Hours, 1, 11)" classname="qtriptest.tests.testCase_02" time="27.754"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
