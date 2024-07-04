@@ -13,7 +13,7 @@ public class HomePage {
     WebDriver driver;
     String url="https://qtripdynamic-qa-frontend.vercel.app";
 
-    public HomePage(RemoteWebDriver driver){
+    public HomePage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
     }

@@ -13,7 +13,7 @@ public class HistoryPage {
     WebDriver driver;
     String bookingID;
 
-    public HistoryPage(RemoteWebDriver driver){
+    public HistoryPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
     }

@@ -12,7 +12,7 @@ public class AdventureDetailsPage {
     WebDriver driver;
     String verifybookingbanner = "Greetings! Reservation for this adventure is successful.";
 
-    public AdventureDetailsPage(RemoteWebDriver driver){
+    public AdventureDetailsPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
     }

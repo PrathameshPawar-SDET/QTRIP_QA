@@ -4,15 +4,7 @@ import qtriptest.DP;
 import qtriptest.pages.HomePage;
 import qtriptest.pages.LoginPage;
 import qtriptest.pages.RegisterPage;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.sql.Driver;
 import com.relevantcodes.extentreports.LogStatus;
-import qtriptest.*;
-import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.*;
 import org.testng.annotations.*;
 
 public class testCase_01 extends BaseTest {

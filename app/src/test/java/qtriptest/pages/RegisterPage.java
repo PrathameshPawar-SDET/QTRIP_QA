@@ -14,7 +14,7 @@ public class RegisterPage {
     WebDriver driver;
     public String usernamevalue;
 
-    public RegisterPage(RemoteWebDriver driver){
+    public RegisterPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 

@@ -12,7 +12,7 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 public class LoginPage {
     WebDriver driver;
 
-    public LoginPage(RemoteWebDriver driver){
+    public LoginPage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
     }

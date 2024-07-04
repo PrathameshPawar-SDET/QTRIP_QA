@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 public class AdventurePage {
     WebDriver driver;
 
-    public AdventurePage(RemoteWebDriver driver){
+    public AdventurePage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
     }
