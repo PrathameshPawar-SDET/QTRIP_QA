@@ -9,81 +9,86 @@ import qtriptest.pages.HomePage;
 import qtriptest.pages.LoginPage;
 import qtriptest.pages.RegisterPage;
 import java.net.MalformedURLException;
-
-import org.openqa.selenium.WebDriver;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class testCase_03 {
+public class testCase_03 extends BaseTest {
 
-    static WebDriver driver;
-
-    @BeforeTest(enabled = true)
-    public static void createDriver() throws MalformedURLException, InterruptedException {
-       
-        driver = DriverSingleton.getdriver();
-        driver.get("https://qtripdynamic-qa-frontend.vercel.app/");
-        Thread.sleep(2000);
-    }
 
     @Test(dataProvider = "excelReading", dataProviderClass = DP.class,description ="Verify Booking and Cancellation Flow", groups = {"Booking and Cancellation Flow"}, priority = 3)
-    public void testcase03(String userName, String password, String searchCity, 
-    String AdventureName, String guestName, String date, String count) throws InterruptedException{
+    public void testcase03(String userName, String password, String searchCity,
+                           String AdventureName, String guestName, String date, String count) throws InterruptedException{
 
-        HomePage home = new HomePage(driver);
-        home.navigateToHomePage();
-        Thread.sleep(2000);
-        home.navigateToRegisterPage();
-        Thread.sleep(1000);
-        RegisterPage register = new RegisterPage(driver);
-        register.RegisternewUser(userName, password, password, true);
-        String Lastgeneratedusername = register.usernamevalue;
-        Thread.sleep(2000);
-        
-        LoginPage login = new LoginPage(driver);
-        login.LoginQtrip(Lastgeneratedusername, password);
+        test = reports.startTest("testcase03 - Verify Booking and Cancellation Flow");
+        try {
+            HomePage home = new HomePage(driver);
+            test.log(LogStatus.INFO, "Navigating to Homepage");
+            home.navigateToHomePage();
+            Thread.sleep(2000);
+            test.log(LogStatus.INFO, "Navigating to Register Page");
+            home.navigateToRegisterPage();
+            Thread.sleep(1000);
+            RegisterPage register = new RegisterPage(driver);
+            test.log(LogStatus.INFO, "Register New User");
+            register.RegisternewUser(userName, password, password, true);
+            String Lastgeneratedusername = register.usernamevalue;
+            Thread.sleep(2000);
 
-        home.searchData(searchCity);
-        home.selectCity();
+            LoginPage login = new LoginPage(driver);
+            test.log(LogStatus.INFO, "Login into QTRIP");
+            login.LoginQtrip(Lastgeneratedusername, password);
+            test.log(LogStatus.INFO, "Search for city name");
+            home.searchData(searchCity);
 
-        AdventurePage adventure = new AdventurePage(driver);
-        adventure.searchAdventure(AdventureName);
-        Thread.sleep(1000);
-        adventure.selectAdventure();
-        
-        Thread.sleep(2000);
+            test.log(LogStatus.INFO, "Selecting the city:" + searchCity);
+            home.selectCity();
 
-        AdventureDetailsPage adventureDetails = new AdventureDetailsPage(driver);
-        adventureDetails.fillAdventureDetails(guestName, date, count);
-        Thread.sleep(3000);
-        adventureDetails.reserveBooking();
-        Thread.sleep(5000);
-        adventureDetails.verifyBooking();
-        Thread.sleep(1000);
-        adventureDetails.navigateToHistoryPage();
+            AdventurePage adventure = new AdventurePage(driver);
+            adventure.searchAdventure(AdventureName);
+            Thread.sleep(1000);
+            adventure.selectAdventure();
 
-        HistoryPage history = new HistoryPage(driver);
-        history.fetchBookingId();
-        Thread.sleep(2000);
-        history.cancelBooking();
-        Thread.sleep(5000);
+            Thread.sleep(2000);
 
-        driver.navigate().refresh();
+            AdventureDetailsPage adventureDetails = new AdventureDetailsPage(driver);
+            adventureDetails.fillAdventureDetails(guestName, date, count);
+            Thread.sleep(3000);
+            adventureDetails.reserveBooking();
+            Thread.sleep(5000);
+            adventureDetails.verifyBooking();
+            Thread.sleep(1000);
+            adventureDetails.navigateToHistoryPage();
 
-        // Thread.sleep(2000);
-        // history.isbookingpresent();
-        Thread.sleep(1000);
+            HistoryPage history = new HistoryPage(driver);
+            history.fetchBookingId();
+            Thread.sleep(2000);
+            history.cancelBooking();
+            Thread.sleep(5000);
 
-        history.logout();
-        Thread.sleep(2000);
+            driver.navigate().refresh();
 
-        
+            // Thread.sleep(2000);
+            // history.isbookingpresent();
+            Thread.sleep(1000);
+
+            test.log(LogStatus.INFO, "Logging out from QTRIP");
+            history.logout();
+            Thread.sleep(2000);
+
+            test.log(LogStatus.PASS, "Testcase 3 has been Passed");
+            captureScreenshot("Testcase03_Passed");
+
+        }catch (Exception e) {
+            captureScreenshot("Testcase03_Failed");
+            test.log(LogStatus.FAIL, "Testcase 3 has failed: " + e.getMessage());
+            throw e;
+        } finally {
+            reports.endTest(test);
+        }
 
     }
-//     @AfterTest(enabled = true)
-//     public void quitedriver(){
-//         driver.close();
-//     }
+
 }

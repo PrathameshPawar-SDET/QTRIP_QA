@@ -1,8 +1,8 @@
 package qtriptest.pages;
 
-import java.util.UUID;
-
 import org.openqa.selenium.WebDriver;
+import qtriptest.SeleniumWrapper;
+import java.util.UUID;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +14,7 @@ public class RegisterPage {
     WebDriver driver;
     public String usernamevalue;
 
-    public RegisterPage(WebDriver driver){
+    public RegisterPage(RemoteWebDriver driver){
         this.driver = driver;
         PageFactory.initElements(new AjaxElementLocatorFactory(driver, 10), this);
 
@@ -38,8 +38,8 @@ public class RegisterPage {
     private WebElement registerButton;
 
     public boolean isNavtoRegisterPagesucceded(){
-        return driver.getCurrentUrl().contains(registerPageEndpoint) && 
-        registerPageHeader.getText().equals("Register");
+        return driver.getCurrentUrl().contains(registerPageEndpoint) &&
+                registerPageHeader.getText().equals("Register");
     }
 
     public boolean RegisternewUser(String username, String Password, String ConfirmPassword, boolean uniqueuser) throws InterruptedException{
@@ -53,13 +53,17 @@ public class RegisterPage {
             uniqueusername = username;
         }
         Thread.sleep(2000);
-        email.sendKeys(uniqueusername);
+        // email.sendKeys(uniqueusername);
+        SeleniumWrapper.sendKeys(driver, this.email, uniqueusername);
         Thread.sleep(2000);
-        password.sendKeys(Password);
+        // password.sendKeys(Password);
+        SeleniumWrapper.sendKeys(driver,this.password, Password);
         Thread.sleep(2000);
-        cnfpassword.sendKeys(ConfirmPassword);
+        // cnfpassword.sendKeys(ConfirmPassword);
+        SeleniumWrapper.sendKeys(driver, this.cnfpassword, ConfirmPassword);
         Thread.sleep(2000);
-        registerButton.click();
+        // registerButton.click();
+        SeleniumWrapper.click(this.registerButton, driver);
         Thread.sleep(2000);
         this.usernamevalue = uniqueusername;
         if(driver.getCurrentUrl().endsWith("/login")){
@@ -71,7 +75,7 @@ public class RegisterPage {
 
         // LoginPage login = new LoginPage(driver);
         // return login.isloginpagedisplayed();
-        
+
 
     }
 

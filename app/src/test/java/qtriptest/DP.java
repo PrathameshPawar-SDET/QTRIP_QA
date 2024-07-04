@@ -20,7 +20,7 @@ public class DP {
     // TODO: use correct annotation to connect the Data Provider with your Test Cases
 
     @DataProvider(name = "excelReading")
-    
+
     public Object[][] dpMethod(Method m) throws IOException {
         int rowIndex = 0;
         int cellIndex = 0;
@@ -28,9 +28,9 @@ public class DP {
 
         // FileInputStream excelFile = new FileInputStream(new File(
         //         "<absolute-path-to-xlsx-file>"));
-                FileInputStream excelFile = new FileInputStream(new File(
-                "D://Crio assignment/ME_QTRIP_QA_V2/app/src/test/resources/DatasetsforQTrip.xlsx"));
-                
+        FileInputStream excelFile = new FileInputStream(new File(
+                "/home/crio-user/workspace/pawarprathamesh62-ME_QTRIP_QA_V2/app/src/test/resources/DatasetsforQTrip.xlsx"));
+
         XSSFWorkbook workbook = new XSSFWorkbook(excelFile);
         XSSFSheet selectedSheet = workbook.getSheet(m.getName());
         Iterator<Row> iterator = selectedSheet.iterator();
